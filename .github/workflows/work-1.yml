@@ -6,6 +6,7 @@ on:
       - 'src/**'
       - 'build.gradle'
       - 'Dockerfile'
+      - 'index.html'
     branches:
       - main
 jobs:
@@ -56,5 +57,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ env.OWNER_LC }}/deploy:${{ needs.makeTagAndRelease.outputs.tag_name }}
+            ghcr.io/${{ env.OWNER_LC }}/deploy:${{ needs.makeTagAndRelease.outputs.tag_name }},
             ghcr.io/${{ env.OWNER_LC }}/deploy:latest
